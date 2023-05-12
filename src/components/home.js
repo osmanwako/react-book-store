@@ -1,14 +1,14 @@
-import BookForm from "./books/bookform";
-import BookInformation from "./books/booklists";
+import BookForm from './books/bookform';
+import BookInformation from './books/booklists';
 
-const Home = () => {
-    return <div className="container">
-        <div>
-            <BookInformation />
-            <div className="horizontal-divider"></div>
-            <BookForm />
-        </div>
+const Home = () => (
+  <div className="container">
+    <div>
+      <BookInformation />
+      <div className="horizontal-divider" />
+      <BookForm />
     </div>
-}
+  </div>
+);
 
 export default Home;
