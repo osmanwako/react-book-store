@@ -1,0 +1,32 @@
+import { createSlice } from "@reduxjs/toolkit";
+
+const initialState = {
+    books: [],
+    total: 0,
+}
+
+export const Bookslice = createSlice({
+    name: 'bookstore',
+    initialState,
+    reducers: {
+        addbook: (state, { payload }) => {
+            const book = { ...payload, completed: 0 };
+            state.books = [...state.books, { ...book }];
+            state.count += 1;
+        },
+        removebook: (state, action) => {
+            const id = action.payload;
+            console.log(id);
+            state.books = state.books.filter((book) => book.id !== id);
+            state.count -= 1;
+        },
+        editbooktitle: (state, { payload }) => {
+            const editbook = state.books.find((book) => book.id === payload.id);
+            editbook.title = payload.title;
+        },
+    }
+});
+
+export const { addbook, removebook, editbooktitle } = Bookslice.actions;
+
+export default Bookslice.reducer;
