@@ -1,4 +1,4 @@
-const BookItem = () => (
+const BookInformation = () => (
   <li>
     <div className="book">
       <div className="book-content">
@@ -36,4 +36,4 @@ const BookItem = () => (
   </li>
 );
 
-export default BookItem;
+export default BookInformation;

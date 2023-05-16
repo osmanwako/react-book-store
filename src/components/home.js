@@ -1,10 +1,10 @@
 import BookForm from './books/bookform';
-import BookInformation from './books/booklists';
+import BookList from './books/booklists';
 
 const Home = () => (
   <div className="container">
     <div>
-      <BookInformation />
+      <BookList />
       <div className="horizontal-divider" />
       <BookForm />
     </div>

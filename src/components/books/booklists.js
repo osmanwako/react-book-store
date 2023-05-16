@@ -1,10 +1,10 @@
-import BookItem from './bookitem';
+import BookInformation from './bookinfo';
 
-const BookInformation = () => (
+const BookList = () => (
   <ul className="books">
-    <BookItem />
-    <BookItem />
+    <BookInformation />
+    <BookInformation />
   </ul>
 );
 
-export default BookInformation;
+export default BookList;
