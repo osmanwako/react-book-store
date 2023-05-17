@@ -229,8 +229,8 @@
 .add-form {
   margin-top: 20px;
   display: flex;
-  grid-gap: 32px;
-  gap: 32px;
+  grid-gap: 10px;
+  gap: 10px;
 }
 
 .input {
@@ -264,4 +264,8 @@
   font-size: 0.813rem;
   font-weight: 700;
   font-family: "Roboto Slab", serif;
+}
+
+.d-none {
+  display: none;
 }

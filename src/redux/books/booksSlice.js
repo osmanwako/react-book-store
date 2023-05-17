@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from 'uuid';
 
 const initialState = {
   books: [
@@ -21,6 +21,12 @@ const initialState = {
       author: 'Richard Dawkins',
       category: 'Nonfiction',
     },
+    {
+      id: uuidv4(),
+      title: 'Biology',
+      author: 'Osman Wako',
+      category: 'Science Fiction',
+    },
   ],
   total: 0,
 };
@@ -30,7 +36,7 @@ export const Bookslice = createSlice({
   initialState,
   reducers: {
     addbook: (state, { payload }) => {
-      const book = { ...payload, progress: 0 };
+      const book = { ...payload, id: uuidv4() };
       state.books = [...state.books, { ...book }];
       state.total += 1;
     },
