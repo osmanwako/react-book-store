@@ -123,18 +123,18 @@ cd mathmagicians
 
 Install project dependencies in this project with:
 
-- npx create-react-app mathmagicians
+- npx create-react-app react-book-store
 - npm install --save-dev react-test-renderer
 - npm install
 - run your project at npm start
 
 ### Usage
 
-Clone this repository to your mathmagicians folder:
+Clone this repository to your react-book-store folder:
 git clone https://github.com/osmanwako/react-book-store.git
-cd react-book-store
-npm i
-npm start
+- cd react-book-store
+- npm install
+- npm start
 
 ### Run tests
 
