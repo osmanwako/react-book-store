@@ -2,11 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   categories: [],
-  status: 'Under construction',
+  status: 'Under Construction',
 };
 
 export const Categoryslice = createSlice({
-  name: 'bookstore',
+  name: 'bookcategory',
   initialState,
   reducers: {
     checkstatus: (state) => state.status,
