@@ -96,6 +96,7 @@
 .book-title {
   font-weight: 700;
   color: #121212;
+  text-transform: capitalize;
 }
 
 .book-author {
@@ -103,6 +104,7 @@
   font-weight: 300;
   color: #4386bf;
   font-family: "Roboto Slab", serif;
+  text-transform: capitalize;
 }
 
 .action-buttons {
@@ -264,4 +266,18 @@
   font-size: 0.813rem;
   font-weight: 700;
   font-family: "Roboto Slab", serif;
+}
+.person-icon {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  color: #0290ff;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
 }

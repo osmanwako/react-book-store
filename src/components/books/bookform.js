@@ -15,14 +15,14 @@ const BookForm = () => {
   const dispatch = useDispatch();
 
   const onAuthor = (e) => {
-    setAuthor(() => e.target.value);
+    setAuthor(() => e.target.value.toLowerCase());
   };
   const onTitle = (e) => {
-    setTitle(() => e.target.value);
+    setTitle(() => (e.target.value).toLowerCase());
   };
 
   const onCategory = (e) => {
-    setCategory(() => e.target.value);
+    setCategory(() => e.target.value.toLowerCase());
   };
 
   const onaddbook = (e) => {
