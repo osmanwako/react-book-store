@@ -1,12 +1,23 @@
 import { useDispatch } from 'react-redux';
-import { removebook } from '../../redux/books/booksSlice';
+import { deleteBook } from '../../redux/books/booksSlice';
 
 const BookInformation = (bookitem) => {
   const dispatch = useDispatch();
   const { list } = bookitem;
+  if (list.length !== 2) {
+    return (
+      <li>
+        <div className="book">
+          Data has no valid pattern
+        </div>
+      </li>
+    );
+  }
+
+  const data = { id: list[0], ...list[1][0] };
   const {
     id, title, author, category,
-  } = list;
+  } = data;
   return (
     <li>
       <div className="book">
@@ -20,7 +31,7 @@ const BookInformation = (bookitem) => {
             <div className="action-buttons">
               <button className="button-outline" type="button">Comments</button>
               <div className="vertical-divider" />
-              <button className="button-outline" type="button" onClick={() => dispatch(removebook(id))}>Remove</button>
+              <button className="button-outline" type="button" onClick={() => dispatch(deleteBook(id))}>Remove</button>
               <div className="vertical-divider" />
               <button className="button-outline" type="button">Edit</button>
             </div>
