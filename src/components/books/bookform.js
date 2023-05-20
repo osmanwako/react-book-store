@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 import { addBook } from '../../redux/books/booksSlice';
 
 const BookForm = () => {
@@ -23,11 +23,15 @@ const BookForm = () => {
     e.preventDefault();
     if (title.trim() !== '' && author.trim() !== '' && category.trim() !== '') {
       const book = {
-        title,
-        author,
+        item_id: `bid${Date.now()}`,
+        title: title.toLowerCase(),
+        author: author.toLowerCase(),
         category,
       };
       dispatch(addBook(book));
+      setAuthor(() => '');
+      setTitle(() => '');
+      setCategory(() => '');
     }
   };
 
@@ -41,7 +45,7 @@ const BookForm = () => {
           <option value=""> Select category</option>
           <option value="Action">Action</option>
           <option value="Science Fiction">Science Fiction</option>
-          <option value="Economy">Economy</option>
+          <option value="Literature">Literature</option>
         </select>
         <button className="primary-button-big" type="submit">ADD BOOK</button>
       </form>
