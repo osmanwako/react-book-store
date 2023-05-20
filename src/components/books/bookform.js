@@ -2,6 +2,12 @@ import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { addBook } from '../../redux/books/booksSlice';
 
+const guId = () => {
+  const str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const num = Math.floor(Math.random() * 24);
+  return `${str[num]}${str[num + 1]}${Date.now()}`;
+};
+
 const BookForm = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
@@ -23,7 +29,7 @@ const BookForm = () => {
     e.preventDefault();
     if (title.trim() !== '' && author.trim() !== '' && category.trim() !== '') {
       const book = {
-        item_id: `bid${Date.now()}`,
+        item_id: guId(),
         title: title.toLowerCase(),
         author: author.toLowerCase(),
         category,
