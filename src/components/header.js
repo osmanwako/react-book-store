@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { BsFillPersonFill } from 'react-icons/bs';
 
 const Header = () => (
   <nav className="nav-bar">
@@ -12,7 +13,9 @@ const Header = () => (
       </li>
     </ul>
     <button className="icon-button" type="button">
-      <span className="material-icons primary-color">&#9993;</span>
+      <span className="person-icon primary-color">
+        <BsFillPersonFill />
+      </span>
     </button>
   </nav>
 );

@@ -35,7 +35,7 @@ const BookInformation = (bookitem) => {
             <div className="action-buttons">
               <button className="button-outline" type="button">Comments</button>
               <div className="vertical-divider" />
-              <button className="button-outline" type="button" onClick={() => ondelete(id)}>Remove</button>
+              <button className="button-outline " type="button" onClick={() => ondelete(id)}>Remove</button>
               <div className="vertical-divider" />
               <button className="button-outline" type="button">Edit</button>
             </div>
