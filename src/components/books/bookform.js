@@ -1,6 +1,12 @@
-import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addbook } from '../../redux/books/booksSlice';
+import { useState } from 'react';
+import { addBook } from '../../redux/books/booksSlice';
+
+const guId = () => {
+  const str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const num = Math.floor(Math.random() * 24);
+  return `${str[num]}${str[num + 1]}${Date.now()}`;
+};
 
 const BookForm = () => {
   const [title, setTitle] = useState('');
@@ -23,11 +29,15 @@ const BookForm = () => {
     e.preventDefault();
     if (title.trim() !== '' && author.trim() !== '' && category.trim() !== '') {
       const book = {
-        title,
-        author,
+        item_id: guId(),
+        title: title.toLowerCase(),
+        author: author.toLowerCase(),
         category,
       };
-      dispatch(addbook(book));
+      dispatch(addBook(book));
+      setAuthor(() => '');
+      setTitle(() => '');
+      setCategory(() => '');
     }
   };
 
@@ -41,7 +51,7 @@ const BookForm = () => {
           <option value=""> Select category</option>
           <option value="Action">Action</option>
           <option value="Science Fiction">Science Fiction</option>
-          <option value="Economy">Economy</option>
+          <option value="Literature">Literature</option>
         </select>
         <button className="primary-button-big" type="submit">ADD BOOK</button>
       </form>
